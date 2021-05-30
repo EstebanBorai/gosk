@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - 4200:4200
+    volumes:
+      - ./:/go/src/github.com/EstebanBorai/gosk
