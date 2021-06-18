@@ -4,6 +4,8 @@ services:
   api:
     build:
       context: .
+    environment:
+      - GO111MODULE=off
     ports:
       - 4200:4200
     volumes:

@@ -13,7 +13,7 @@
 1. Clone this repository or click on the **Use template** button to create a
 repository from this template
 
-2. Run `make start` to build and execute the project
+2. Run `make up` to build and execute the project
 
 ```log
 api_1  | Running build command!
@@ -49,7 +49,7 @@ Hello from Golang!
 Use `Ctrl+C` to stop the Docker process and then run `make clean`
 
 ```log
-$ make clean
+$ make down
 docker-compose down
 Removing gosk_1 ... done
 Removing network gosk_default
@@ -68,3 +68,16 @@ Total reclaimed space: 12.42MB
 docker volume prune -f
 Total reclaimed space: 0B
 ```
+
+## Caveats
+
+* To avoid the error:
+
+```
+  Error while building:
+  cmd/main.go:5:2: no required module provides package <package url>; to add it:
+      go get <package url>
+```
+
+The `go.mod` file is removed and the environment variable `GO111MODULE` is set
+to `off`.

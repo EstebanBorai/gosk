@@ -8,9 +8,9 @@ clean: stop
 	docker system prune -f
 	docker volume prune -f
 
-start: default
+up: default
 	@echo "Running containers"
 	docker-compose up
 
-stop:
+down:
 	docker-compose down
